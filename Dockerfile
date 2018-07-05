@@ -1,4 +1,4 @@
-FROM lambci/lambda:build-nodejs6.10
+FROM lambci/lambda:build-nodejs8.10
 
 RUN touch /root/.bashrc
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
