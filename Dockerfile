@@ -1,6 +1,9 @@
 FROM lambci/lambda:build-nodejs8.10
 
 RUN touch /root/.bashrc
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+
+# install yarn
+RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
+RUN yum install yarn -y
 
 WORKDIR /root
