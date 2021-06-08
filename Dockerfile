@@ -1,4 +1,4 @@
-FROM lambci/lambda:build-nodejs12.x
+FROM amazon/aws-sam-cli-build-image-nodejs14.x
 
 RUN touch /root/.bashrc
 
