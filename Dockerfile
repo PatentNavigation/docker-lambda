@@ -1,5 +1,4 @@
-FROM amazon/aws-sam-cli-build-image-nodejs14.x
-
+FROM public.ecr.aws/sam/build-nodejs16.x:1.55.0-20220818005337
 RUN touch /root/.bashrc
 
 # install yarn
