@@ -1,12 +1,12 @@
-FROM public.ecr.aws/sam/build-nodejs16.x:1.55.0-20220818005337
+FROM public.ecr.aws/sam/build-nodejs18.x:1.69.0-20230112020742
 RUN touch /root/.bashrc
 
 # install yarn
 RUN npm i -g yarn
 
-# install wkhtmltopdf
-# WORKDIR /tmp
-# RUN curl -L -O https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.2.1/wkhtmltox-0.12.2.1_linux-centos5-amd64.rpm
-# RUN yum --nogpgcheck localinstall wkhtmltox-0.12.2.1_linux-centos5-amd64.rpm -y
+# install wkhtmltopdf so we can run `cyclopia` tests on circle
+WORKDIR /tmp
+RUN curl -L -O https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox-0.12.6-1.amazonlinux2.x86_64.rpm
+RUN yum --nogpgcheck localinstall wkhtmltox-0.12.6-1.amazonlinux2.x86_64.rpm -y
 
 WORKDIR /root

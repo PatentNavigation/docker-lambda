@@ -1,3 +1,3 @@
 # docker-lambda
 
-Node 16
+Node 18
